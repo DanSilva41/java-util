@@ -1,0 +1,2 @@
+- Array é sempre zero-based(primeiro elemento se encontra na posição 0).
+- Um array é sempre inicializado com os valores padrões.
