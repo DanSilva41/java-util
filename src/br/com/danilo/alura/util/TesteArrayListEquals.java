@@ -17,7 +17,8 @@ public class TesteArrayListEquals {
         Conta contaPoupanca = new ContaCorrente(32124, 7854);
         lista.add(contaPoupanca);
 
-        boolean existe = lista.contains(contaPoupanca);
+        Conta contaPoupancaCopia = new ContaCorrente(32124, 7854);
+        boolean existe = lista.contains(contaPoupancaCopia); // outra referencia
 
         System.out.println("Ja existe? "+ existe);
 
