@@ -4,7 +4,7 @@ import br.com.danilo.alura.herdado.*;
 
 import java.util.*;
 
-public class Teste {
+public class TesteClassesAnonimas {
 
     public static void main(String[] args) {
 
@@ -39,6 +39,17 @@ public class Teste {
         lista.add(cc4);
 
         // Usando classes anonimas
+//        Comparator comparator = new Comparator<Conta>() {
+//
+//            @Override
+//            public int compare(Conta c1, Conta c2) {
+//                String nomeC1 = c1.getTitular().getNome();
+//                String nomeC2 = c2.getTitular().getNome();
+//
+//                return nomeC1.compareTo(nomeC2);
+//            }
+//        };
+
         lista.sort(new Comparator<Conta>() {
 
             @Override
@@ -53,27 +64,5 @@ public class Teste {
         for (Conta conta : lista) {
             System.out.println(conta + " , Titular: " + conta.getTitular().getNome());
         }
-    }
-}
-
-class TitularDaCOntaComparator2 implements Comparator<Conta> {
-
-    @Override
-    public int compare(Conta c1, Conta c2) {
-        String nomeC1 = c1.getTitular().getNome();
-        String nomeC2 = c2.getTitular().getNome();
-
-        return nomeC1.compareTo(nomeC2);
-    }
-}
-
-class NumeroDaContaComparator2 implements Comparator<Conta> {
-
-    // Se o 1 valor for maior = devolver valor POSITIVO
-    // Se o 2 valor for maior = devolver valor NEGATIVO
-    // Se igual = devolver 0
-    @Override
-    public int compare(Conta c1, Conta c2) {
-        return Integer.compare(c1.getNumero(), c2.getNumero());
     }
 }
