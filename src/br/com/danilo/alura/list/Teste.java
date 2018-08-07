@@ -39,17 +39,17 @@ public class Teste {
         lista.add(cc4);
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + " , Titular: "+ conta.getTitular().getNome());
         }
 
         System.out.println();
 
-        NumeroDaContaComparator numeroDaContaComparator = new NumeroDaContaComparator();
+        TitularDaCOntaComparator titularDaCOntaComparator = new TitularDaCOntaComparator();
 
-        lista.sort(numeroDaContaComparator);
+        lista.sort(titularDaCOntaComparator);
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            System.out.println(conta + " , Titular: "+ conta.getTitular().getNome());
         }
     }
 }
@@ -67,16 +67,11 @@ class TitularDaCOntaComparator implements  Comparator<Conta> {
 
 class NumeroDaContaComparator implements Comparator<Conta> {
 
+    // Se o 1 valor for maior = devolver valor POSITIVO
+    // Se o 2 valor for maior = devolver valor NEGATIVO
+    // Se igual = devolver 0
     @Override
     public int compare(Conta c1, Conta c2) {
-        // Se o 1 valor for maior = devolver valor POSITIVO
-        // Se o 2 valor for maior = devolver valor NEGATIVO
-        if (c1.getNumero() > c2.getNumero()) {
-            return 1;
-        } else if (c1.getNumero() < c2.getNumero()) {
-            return -1;
-        }
-
-        return 0;
+        return Integer.compare(c1.getNumero(), c2.getNumero());
     }
 }
