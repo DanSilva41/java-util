@@ -45,8 +45,8 @@ public class Teste {
         System.out.println();
 
 //        lista.sort(new TitularDaCOntaComparator());
-        Collections.sort(lista, new NumeroDaContaComparator());
-
+//        Collections.sort(lista, new NumeroDaContaComparator());
+        Collections.sort(lista);
 
         for (Conta conta : lista) {
             System.out.println(conta + " , Titular: "+ conta.getTitular().getNome());

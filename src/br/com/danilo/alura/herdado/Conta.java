@@ -1,19 +1,22 @@
 package br.com.danilo.alura.herdado;
 
-public abstract class Conta {
+public abstract class Conta implements Comparable<Conta> {
 
+    private static int total;
     protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
-
-    private static int total;
 
     public Conta(int agencia, int numero) {
         this.agencia = agencia;
         this.numero = numero;
         Conta.total++;
 //        System.out.println("Estou criando uma conta!");
+    }
+
+    public static int getTotal() {
+        return total;
     }
 
     public abstract void deposita(double valor);
@@ -38,14 +41,14 @@ public abstract class Conta {
         return false;
     }
 
-    public double getSaldo() {
-        return this.saldo;
-    }
-
     /*
      * Não precisamos de setSaldo(), pois não queremos disponibilizar isto. Somente
      * através do métodos de transação é possível alterar o saldo
      */
+
+    public double getSaldo() {
+        return this.saldo;
+    }
 
     public int getAgencia() {
         return this.agencia;
@@ -81,24 +84,25 @@ public abstract class Conta {
         this.titular = titular;
     }
 
-    public static int getTotal() {
-        return total;
-    }
-
     @Override
     public String toString() {
-        return "Conta: Numero: "+ this.numero + ", Agencia: "+ this.agencia;
+        return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: "+ this.saldo;
     }
 
     @Override
     public boolean equals(Object object) {
         Conta outraContra = (Conta) object;
-        if(this.numero != outraContra.getNumero()) {
+        if (this.numero != outraContra.getNumero()) {
             return false;
-        } else if(this.agencia != outraContra.getAgencia()) {
+        } else if (this.agencia != outraContra.getAgencia()) {
             return false;
         }
 
         return true;
+    }
+
+    @Override
+    public int compareTo(Conta outraContra) {
+        return Double.compare(this.saldo, outraContra.saldo);
     }
 }
