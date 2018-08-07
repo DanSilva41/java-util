@@ -13,3 +13,18 @@ ___________________________________________________________
 - o cast só compila quando é possível, mesmo assim pode falhar na hora de rodar
 - quando o type cast falha podemos receber uma ClassCastException
 - para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main
+
+___________________________________________________________
+java.util.ArrayList
+VANTAGENS:
+    - Acesso fácil a qualquer elemento aleato'rio.
+    - Ao adicionar um novo elemento, o ArrayList sabe automaticamente qual a pro'xima posição livre.
+DESVANTAGENS:
+    - Capacidade limitada ao seu tamanho no momento da criação.
+    - Operacao CUSTOSA ao remover alguma posicao, pois internamente ela reorganiza as posicoes no array(array nao permite "buracos").
+
+java.util.LinkedList
+* Lista duplamente encadeada: O elemento guardar a referencia do elemento anterior o do sucessor
+VANATAGENS:
+    - Ao remover um elemento não causa grande impacto.
+    - Nao ' possível ter acesso direto sobre uma posicão de uma LinkedList, e' necessário iterar desde o início

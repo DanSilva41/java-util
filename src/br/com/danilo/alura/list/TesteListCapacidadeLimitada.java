@@ -1,4 +1,4 @@
-package br.com.danilo.alura.util;
+package br.com.danilo.alura.list;
 
 import java.util.ArrayList;
 

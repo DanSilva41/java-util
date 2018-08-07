@@ -1,4 +1,4 @@
-package br.com.danilo.alura.util;
+package br.com.danilo.alura.list;
 
 import br.com.danilo.alura.herdado.Conta;
 import br.com.danilo.alura.herdado.ContaCorrente;
@@ -23,7 +23,9 @@ public class TesteArrayListEquals {
         System.out.println("Ja existe? "+ existe);
 
         for (Conta conta : lista) {
-            System.out.println(conta);
+            if(conta == contaPoupancaCopia) {
+                System.out.println("Ja tenho essa conta");
+            }
         }
 
     }

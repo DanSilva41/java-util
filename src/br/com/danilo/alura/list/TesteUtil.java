@@ -1,15 +1,15 @@
-package br.com.danilo.alura.util;
+package br.com.danilo.alura.list;
 
 import br.com.danilo.alura.herdado.Conta;
 import br.com.danilo.alura.herdado.ContaCorrente;
 
 import java.util.ArrayList;
 
-public class TesteGenerics {
+public class TesteUtil {
 
     public static void main(String[] args) {
 
-        ArrayList<Conta> lista = new ArrayList<Conta>();
+        ArrayList lista = new ArrayList();
 
         Conta contaCorrente = new ContaCorrente(15644, 1231);
         lista.add(contaCorrente);
@@ -19,7 +19,7 @@ public class TesteGenerics {
 
         System.out.println("Tamanho: "+ lista.size()); // Tamanho da lista
 
-        Conta ref = lista.get(0); // Nao e' necessario cast explicito
+        Conta ref = (Conta) lista.get(0); // Pegando objeto da lista pelo indice
         System.out.println(ref.getNumero());
 
         lista.remove(1); // Removendo um objeto
@@ -27,14 +27,14 @@ public class TesteGenerics {
         System.out.println("Tamanho: "+ lista.size());
 
         for (int i = 0; i < lista.size(); i++) { // Iterar - tradicional
-            Conta conta = lista.get(i);
-            System.out.println(conta);
+            Object object = lista.get(i);
+            System.out.println(object);
         }
 
         System.out.println("--------------");
 
-        for (Conta conta: lista) {
-            System.out.println(conta);
+        for (Object object : lista) {
+            System.out.println(object);
         }
 
     }
