@@ -8,11 +8,11 @@
 - Arrays possuem um atributo length para saber o tamanho
 
 ___________________________________________________________
-- uma array do tipo Object pode guardar qualquer tipo de referência
-- quando convertemos uma referência genérica para uma referência mais específica é preciso usar um type cast
-- o cast só compila quando é possível, mesmo assim pode falhar na hora de rodar
-- quando o type cast falha podemos receber uma ClassCastException
-- para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main
+- Uma array do tipo Object pode guardar qualquer tipo de referência
+- Quando convertemos uma referência genérica para uma referência mais específica é preciso usar um type cast
+- O cast só compila quando é possível, mesmo assim pode falhar na hora de rodar
+- Quando o type cast falha podemos receber uma ClassCastException
+- Para receber valores ao chamar o programa Java na linha de comando podemos usar o array String[] no método main
 
 ___________________________________________________________
 java.util.ArrayList
@@ -21,10 +21,25 @@ VANTAGENS:
     - Ao adicionar um novo elemento, o ArrayList sabe automaticamente qual a pro'xima posição livre.
 DESVANTAGENS:
     - Capacidade limitada ao seu tamanho no momento da criação.
-    - Operacao CUSTOSA ao remover alguma posicao, pois internamente ela reorganiza as posicoes no array(array nao permite "buracos").
+    - Operacao CUSTOSA ao remover alguma posicao, pois internamente ela reorganiza as posicoes na array(array nao permite "buracos").
 
 java.util.LinkedList
 * Lista duplamente encadeada: O elemento guardar a referencia do elemento anterior o do sucessor
 VANATAGENS:
     - Ao remover um elemento não causa grande impacto.
-    - Nao ' possível ter acesso direto sobre uma posicão de uma LinkedList, e' necessário iterar desde o início
+    - Nao ' possível ter acesso direto sobre uma posicão de uma LinkedList, é necessário iterar desde o início
+
+java.util.Vector: Uma "ArrayList threadsafe"
+    - Thread safe: estruturas de dados que pode ser compartilhadas pelas pilhas de execucão.
+
+- A interface java.util.Collection que é a interface de todas as coleções
+- As listas são sequencias que aceitam elementos duplicados
+- Os conjuntos (java.util.Set) também são coleções, mas não aceitam duplicados nem são listas
+___________________________________________________________
+WRAPPERS
+
+TIPO PRIMITIVO              WRAPPER
+int                         java.lang.Integer
+           Autoboxing -->
+           <--  Unboxing
+
