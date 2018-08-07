@@ -43,3 +43,11 @@ int                         java.lang.Integer
            Autoboxing -->
            <--  Unboxing
 
+- Para cada primitivo existe uma classe chamada Wrapper
+- Para guardar um primitivo numa coleção é preciso criar um objeto que embrulha o valor
+- A criação do objeto Wrapper é chamada de autoboxing
+- A retirada do valor primitivo do objeto Wrapper é chamada de unboxing
+- Autoboxing e unboxing acontece automaticamente.
+- As classes wrapper possuem vários métodos auxiliares, por exemplo para o parsing
+- Todas as classes wrappers que representam um valor numérico possuem a classe java.lang.Number como mãe
+
