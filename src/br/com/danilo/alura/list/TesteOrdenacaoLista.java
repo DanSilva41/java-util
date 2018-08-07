@@ -4,7 +4,7 @@ import br.com.danilo.alura.herdado.*;
 
 import java.util.*;
 
-public class Teste {
+public class TesteOrdenacaoLista {
 
     public static void main(String[] args) {
 
